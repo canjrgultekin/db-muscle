@@ -1,0 +1,35 @@
+version: "3.9"
+services:
+  cb1:
+    image: couchbase/server:community-7.6.1
+    hostname: cb1
+    ulimits:
+      nofile: 65536
+    ports:
+      - "8091-8096:8091-8096"
+      - "11210-11211:11210-11211"
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1.5g
+  cb2:
+    image: couchbase/server:community-7.6.1
+    hostname: cb2
+    ulimits:
+      nofile: 65536
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1.5g
+  cb3:
+    image: couchbase/server:community-7.6.1
+    hostname: cb3
+    ulimits:
+      nofile: 65536
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1.5g
